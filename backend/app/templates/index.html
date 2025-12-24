@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}My Portfolio{% endblock %}
+
+{% block content %}
+<div id="root"></div>
+<!-- React bundle will be injected here after build -->
+<script type="module" src="{{ url_for('static', filename='assets/index.js') }}"></script>
+{% endblock %}
