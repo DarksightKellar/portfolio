@@ -10,12 +10,19 @@ def get_projects():
     projects = [
         {
             'id': 1,
-            'title': 'Portfolio Website',
-            'description': 'A modern portfolio built with React and Flask',
-            'tech': ['React', 'Flask', 'Tailwind CSS'],
+            'title': 'Portfolio',
+            'description': 'Showcasing my work and projects',
+            'tech': ['React', 'Flask', 'Tailwind'],
+            'link': '/projects/portfolio',
             'github': 'https://github.com/darksightkellar/portfolio'
         },
-        # Add more projects here
+        {
+            'id': 2,
+            'title': 'Todo App',
+            'description': 'Simple todo with in-memory storage',
+            'tech': ['HTML', 'CSS', 'JavaScript'],
+            'link': '/projects/todo',
+        },
     ]
     return jsonify(projects)
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Todo App</h1>
+        <p class="subtitle">A simple in-memory todo application</p>
+
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Add a new todo..." required>
+            <button type="submit">Add</button>
+        </form>
+
+        <ul id="todo-list"></ul>
+
+        <p class="notice">This is a demo module with in-memory storage.<br>Data is not persisted between page reloads.
+        </p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
-# Portfolio Web App
+# Personal Site
 
-A modern personal portfolio built with **React** (Vite) and **Flask**, designed to be extensible with multiple projects via Git submodules.
+A modular personal website built with **React** (Vite) and **Flask**. Supports multiple project modules that can be developed independently.
 
 ## Tech Stack
 
