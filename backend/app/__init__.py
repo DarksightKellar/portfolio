@@ -28,12 +28,23 @@ def create_app(config=None):
     def serve_modules(path):
         return send_from_directory(modules_folder, path)
     
-    # Serve React app for any non-API route (SPA fallback)
+    # SPA routes - explicitly handle client-side routing paths
+    @app.route('/projects')
+    @app.route('/projects/')
+    @app.route('/projects/<path:path>')
+    @app.route('/about')
+    @app.route('/contact')
+    def serve_spa_routes(path=None):
+        return send_from_directory(static_folder, 'index.html')
+    
+    # Serve React app for root and any other non-API route
     @app.route('/', defaults={'path': ''})
     @app.route('/<path:path>')
     def serve_react(path):
+        # Check if file exists in static folder
         if path and os.path.exists(os.path.join(static_folder, path)):
             return send_from_directory(static_folder, path)
+        # Return index.html for SPA routing
         return send_from_directory(static_folder, 'index.html')
     
     return app
