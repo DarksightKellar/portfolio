@@ -101,6 +101,7 @@ In the **Web** tab under **Static files**, add:
 | URL | Directory |
 |-----|-----------|
 | `/static` | `/home/YOUR_USERNAME/portfolio/backend/app/static` |
+| `/modules` | `/home/YOUR_USERNAME/portfolio/modules` |
 
 ---
 
