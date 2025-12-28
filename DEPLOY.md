@@ -79,7 +79,7 @@ import sys
 import os
 
 # Add project to path
-project_home = '/home/YOUR_USERNAME/portfolio/backend'
+project_home = '/home/YOUR_USERNAME/personal-site/backend'
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
@@ -100,8 +100,8 @@ In the **Web** tab under **Static files**, add:
 
 | URL | Directory |
 |-----|-----------|
-| `/static` | `/home/YOUR_USERNAME/portfolio/backend/app/static` |
-| `/modules` | `/home/YOUR_USERNAME/portfolio/modules` |
+| `/static` | `/home/YOUR_USERNAME/personal-site/backend/app/static` |
+| `/modules` | `/home/YOUR_USERNAME/personal-site/modules` |
 
 ---
 
