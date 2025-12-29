@@ -11,8 +11,33 @@ fnm use
 # Build portfolio module (required for iframe)
 Write-Host "`n[2/4] Building portfolio module..." -ForegroundColor Yellow
 Push-Location modules/portfolio
-npm install --silent 2>$null
+
+Write-Host "Installing dependencies..."
+npm install --silent
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to install portfolio dependencies."
+    Pop-Location
+    exit 1
+}
+
+Write-Host "Running initial build..."
 npm run build
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to build portfolio module."
+    Pop-Location
+    exit 1
+}
+
+# Start watcher in separate terminal to keep build updated
+Write-Host "Starting portfolio watcher..."
+$portfolioPath = "$PWD"
+$watcherScript = @"
+Write-Host 'Starting Portfolio Watcher...' -ForegroundColor Cyan
+cd '$portfolioPath'
+npm run build -- --watch
+"@
+Start-Process powershell -ArgumentList "-NoExit", "-Command", $watcherScript
+
 Pop-Location
 
 # Start backend in separate terminal with conda (using conda hook)
